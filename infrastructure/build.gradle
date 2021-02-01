@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom ext.mavenBom
+    }
+}
+
+dependencies {
+    compileOnly 'org.springframework:spring-context'
+    api project(':domain')
+}

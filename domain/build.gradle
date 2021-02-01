@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom ext.mavenBom
+    }
+}
+
+dependencies {
+    annotationProcessor "org.immutables:value:${immutablesVersion}"
+    compileOnly "org.immutables:value:${immutablesVersion}:annotations"
+    compileOnly 'org.springframework:spring-context'
+}
