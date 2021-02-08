@@ -5,18 +5,8 @@ apply from: "$rootDir/gradle/publish.gradle"
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation project(':application')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation project(':infrastructure')
-}
-
-def copyFrontendResources = tasks.register('copyFrontendResources', Copy)
-
-copyFrontendResources.configure {
-    from project(':frontend').tasks.named('assembleFrontend')
-    into "$buildDir/resources/main/public"
-}
-
-tasks.named('processResources').configure {
-    dependsOn copyFrontendResources
 }
