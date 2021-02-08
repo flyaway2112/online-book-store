@@ -6,7 +6,5 @@ import org.springframework.stereotype.Service;
 public class DefaultOnlineBookStoreService implements OnlineBookStoreService {
 
   @Override
-  public void execute() {
-
-  }
+  public void execute() {}
 }
